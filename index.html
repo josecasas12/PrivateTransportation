@@ -232,8 +232,99 @@
           </div>
         </article>
         <article class="mt-5">
-            <h1>Schedule your trip and receive a quote</h1>
+          <h1>Schedule your trip and receive a quote</h1>
+          <section class="container mt-5 mb-5">
+            <h2 class="mb-4 text-center">
+              Programá tu viaje y recibí una cotización
+            </h2>
+            <form class="row g-3 needs-validation" novalidate>
+              <!-- Nombre y apellido -->
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre y apellido</label>
+                <input type="text" class="form-control" id="nombre" required />
+                <div class="invalid-feedback">Este campo es obligatorio.</div>
+              </div>
 
+              <!-- Email -->
+              <div class="col-md-6">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" required />
+                <div class="invalid-feedback">Ingresá un correo válido.</div>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="col-md-6">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" required />
+                <div class="invalid-feedback">Este campo es obligatorio.</div>
+              </div>
+
+              <!-- Día del viaje -->
+              <div class="col-md-6">
+                <label for="fecha" class="form-label">Día del viaje</label>
+                <input type="date" class="form-control" id="fecha" required />
+                <div class="invalid-feedback">Seleccioná una fecha.</div>
+              </div>
+
+              <!-- Lugar de inicio -->
+              <div class="col-md-6">
+                <label for="origen" class="form-label">Lugar de inicio</label>
+                <input type="text" class="form-control" id="origen" required />
+                <div class="invalid-feedback">Ingresá el punto de partida.</div>
+              </div>
+
+              <!-- Destino -->
+              <div class="col-md-6">
+                <label for="destino" class="form-label">Destino</label>
+                <input type="text" class="form-control" id="destino" required />
+                <div class="invalid-feedback">Ingresá el destino.</div>
+              </div>
+
+              <!-- Tipo de viaje -->
+              <div class="col-md-12">
+                <label for="tipo" class="form-label">Tipo de viaje</label>
+                <select class="form-select" id="tipo" required>
+                  <option selected disabled value="">
+                    Seleccioná una opción
+                  </option>
+                  <option value="privado">Transporte Privado de Lujo</option>
+                  <option value="vuelo">Vuelos Privados Exclusivos</option>
+                  <option value="mudanza">
+                    Mudanzas y Transporte de Gran Volumen
+                  </option>
+                </select>
+                <div class="invalid-feedback">Seleccioná un tipo de viaje.</div>
+              </div>
+
+              <!-- Botón enviar -->
+              <div class="col-12 text-center mt-4">
+                <button class="btn btn-primary" type="submit">
+                  Enviar solicitud
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Validación Bootstrap -->
+          <script>
+            (function () {
+              "use strict";
+              const forms = document.querySelectorAll(".needs-validation");
+              Array.from(forms).forEach(function (form) {
+                form.addEventListener(
+                  "submit",
+                  function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add("was-validated");
+                  },
+                  false
+                );
+              });
+            })();
+          </script>
         </article>
       </section>
     </main>
